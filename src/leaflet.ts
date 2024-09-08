@@ -1,4 +1,4 @@
-import {LitElement, html, css} from 'lit';
+import {LitElement, html, unsafeCSS} from 'lit';
 import {customElement, query, queryAssignedElements} from 'lit/decorators.js';
 import {
     Control, DomUtil,
@@ -12,6 +12,8 @@ import {
     WMSOptions
 } from 'leaflet';
 import {Feature, GeoJsonObject} from 'geojson';
+// @ts-ignore
+import leafletCss from 'leaflet/dist/leaflet.css?inline';
 
 interface Configuration {
     options?: MapOptions;
@@ -49,12 +51,7 @@ interface GeoJSONConfiguration {
 
 @customElement('leaflet-map')
 export class LeafletMapElement extends LitElement {
-    public static styles = css`
-        .container {
-            width: 100%;
-            height: 100%;
-        }
-    `;
+    public static styles = unsafeCSS(leafletCss);
 
     @query('#map')
     private mapElement!: HTMLDivElement;
@@ -66,8 +63,7 @@ export class LeafletMapElement extends LitElement {
 
     protected render() {
         return html`
-            <link href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" rel="stylesheet">
-            <div id="map" class="container">
+            <div id="map" style="width: 100%; height: 100%;">
             </div>
             <div style="display: none;">
                 <slot @slotchange=${this.handleSlotChange}></slot>
