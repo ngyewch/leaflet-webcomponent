@@ -12,12 +12,12 @@ Simple web component for displaying [Leaflet](https://leafletjs.com/) maps.
 
 Script tag:
 ```
-<script type="module" src="https://cdn.jsdelivr.net/npm/@ngyewch/leaflet-webcomponent@0.1.0/dist/leaflet-webcomponent.es.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ngyewch/leaflet-webcomponent@0.2.0/dist/leaflet-webcomponent.es.js"></script>
 ```
 
 Alternative:
 ```
-<script defer src="https://cdn.jsdelivr.net/npm/@ngyewch/leaflet-webcomponent@0.1.0/dist/leaflet-webcomponent.umd.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@ngyewch/leaflet-webcomponent@0.2.0/dist/leaflet-webcomponent.umd.js"></script>
 ```
 
 ### Markup
