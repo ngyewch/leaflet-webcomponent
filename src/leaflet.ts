@@ -168,6 +168,29 @@ export class LeafletMapElement extends LitElement {
         }
     }
 
+    private onEachFeature(feature: Feature, layer: Layer) {
+        const tooltip = DomUtil.create('div');
+        const table = DomUtil.create('table', undefined, tooltip);
+        const thead = DomUtil.create('thead', undefined, table);
+        const trHead = DomUtil.create('tr', undefined, thead);
+        const thName = DomUtil.create('th', undefined, trHead);
+        thName.innerText = 'Name';
+        const thValue = DomUtil.create('th', undefined, trHead);
+        thValue.innerText = 'Value';
+        const tbody = DomUtil.create('tbody', undefined, table);
+        if (feature.properties !== null) {
+            for (let key in feature.properties) {
+                const value = feature.properties[key];
+                const tr = DomUtil.create('tr', undefined, tbody);
+                const tdName = DomUtil.create('td', undefined, tr);
+                tdName.innerText = key;
+                const tdValue = DomUtil.create('td', undefined, tr);
+                tdValue.innerText = value;
+            }
+        }
+        layer.bindTooltip(tooltip);
+    }
+
     private loadData(type: string, id?: string): Promise<string> {
         const scriptElements = this.getScriptElements(type, id);
         if (scriptElements.length === 0) {
@@ -179,19 +202,6 @@ export class LeafletMapElement extends LitElement {
             console.warn('leaflet-map', this.id, 'more than one matching data block found, using first', type, id);
         }
         return this.loadDataFromScript(scriptElements[0]);
-    }
-
-    private getScriptElements(type: string, id?: string): HTMLScriptElement[] {
-        const scriptElements: HTMLScriptElement[] = [];
-        for (let i = 0; i < this.scriptElements.length; i++) {
-            const el = this.scriptElements[i];
-            if (el instanceof HTMLScriptElement) {
-                if ((el.type === type) && ((id === undefined) || (el.id === id))) {
-                    scriptElements.push(el);
-                }
-            }
-        }
-        return scriptElements;
     }
 
     private loadDataFromScript(scriptElement: HTMLScriptElement): Promise<string> {
@@ -215,27 +225,17 @@ export class LeafletMapElement extends LitElement {
         });
     }
 
-    private onEachFeature(feature: Feature, layer: Layer) {
-        const tooltip = DomUtil.create('div');
-        const table = DomUtil.create('table', undefined, tooltip);
-        const thead = DomUtil.create('thead', undefined, table);
-        const trHead = DomUtil.create('tr', undefined, thead);
-        const thName = DomUtil.create('th', undefined, trHead);
-        thName.innerText = 'Name';
-        const thValue = DomUtil.create('th', undefined, trHead);
-        thValue.innerText = 'Value';
-        const tbody = DomUtil.create('tbody', undefined, table);
-        if (feature.properties !== null) {
-            for (let key in feature.properties) {
-                const value = feature.properties[key];
-                const tr = DomUtil.create('tr', undefined, tbody);
-                const tdName = DomUtil.create('td', undefined, tr);
-                tdName.innerText = key;
-                const tdValue = DomUtil.create('td', undefined, tr);
-                tdValue.innerText = value;
+    private getScriptElements(type: string, id?: string): HTMLScriptElement[] {
+        const scriptElements: HTMLScriptElement[] = [];
+        for (let i = 0; i < this.scriptElements.length; i++) {
+            const el = this.scriptElements[i];
+            if (el instanceof HTMLScriptElement) {
+                if ((el.type === type) && ((id === undefined) || (el.id === id))) {
+                    scriptElements.push(el);
+                }
             }
         }
-        layer.bindTooltip(tooltip);
+        return scriptElements;
     }
 }
 
