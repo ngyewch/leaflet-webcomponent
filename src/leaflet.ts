@@ -206,7 +206,7 @@ export class LeafletMapElement extends LitElement {
                 resolve(scriptElement.innerText);
             } else {
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET", scriptElement.src)
+                xhr.open("GET", scriptElement.src);
                 xhr.onreadystatechange = () => {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status === 200) {
