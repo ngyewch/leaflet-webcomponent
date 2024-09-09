@@ -1,19 +1,8 @@
 import {LitElement, html, unsafeCSS} from 'lit';
 import {customElement, query, queryAssignedElements} from 'lit/decorators.js';
-import {
-    Control,
-    DomUtil,
-    GeoJSON,
-    GeoJSONOptions,
-    Icon,
-    Layer,
-    Map,
-    MapOptions,
-    TileLayer,
-    TileLayerOptions,
-    WMSOptions
-} from 'leaflet';
+import {Control, DomUtil, GeoJSON, Icon, Layer, Map, TileLayer} from 'leaflet';
 import {Feature, GeoJsonObject} from 'geojson';
+import {Configuration, LayerConfiguration} from './config.js';
 // @ts-ignore
 import leafletCss from 'leaflet/dist/leaflet.css?inline';
 // @ts-ignore
@@ -28,40 +17,6 @@ Icon.Default.mergeOptions({
     iconRetinaUrl: markerIcon2xImage,
     shadowUrl: markerShadowImage,
 });
-
-interface Configuration {
-    options?: MapOptions;
-    scaleOptions?: Control.ScaleOptions;
-    baseLayers?: LayersControlEntry[];
-    overlayLayers?: LayersControlEntry[];
-}
-
-interface LayersControlEntry {
-    name: string;
-    selected?: boolean;
-    config: LayerConfiguration;
-}
-
-type LayerConfiguration = TileLayerConfiguration | TileLayerWMSConfiguration | GeoJSONConfiguration;
-
-interface TileLayerConfiguration {
-    kind: 'TileLayer';
-    urlTemplate: string;
-    options?: TileLayerOptions;
-}
-
-interface TileLayerWMSConfiguration {
-    kind: 'TileLayer.WMS';
-    baseUrl: string,
-    options: WMSOptions;
-}
-
-interface GeoJSONConfiguration {
-    kind: 'GeoJSON';
-    id: string,
-    fitBounds?: boolean,
-    options?: GeoJSONOptions;
-}
 
 @customElement('leaflet-map')
 export class LeafletMapElement extends LitElement {
