@@ -2,6 +2,11 @@
   "name": "@ngyewch/leaflet-webcomponent",
   "version": "0.2.0",
   "description": "Leaflet web component",
+  "keywords": [
+    "leaflet",
+    "geojson",
+    "web-component"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
