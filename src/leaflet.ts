@@ -1,9 +1,11 @@
 import {LitElement, html, unsafeCSS} from 'lit';
 import {customElement, query, queryAssignedElements} from 'lit/decorators.js';
 import {
-    Control, DomUtil,
+    Control,
+    DomUtil,
     GeoJSON,
     GeoJSONOptions,
+    Icon,
     Layer,
     Map,
     MapOptions,
@@ -14,6 +16,18 @@ import {
 import {Feature, GeoJsonObject} from 'geojson';
 // @ts-ignore
 import leafletCss from 'leaflet/dist/leaflet.css?inline';
+// @ts-ignore
+import markerIconImage from 'leaflet/dist/images/marker-icon.png';
+// @ts-ignore
+import markerIcon2xImage from 'leaflet/dist/images/marker-icon-2x.png';
+// @ts-ignore
+import markerShadowImage from 'leaflet/dist/images/marker-shadow.png';
+
+Icon.Default.mergeOptions({
+    iconUrl: markerIconImage,
+    iconRetinaUrl: markerIcon2xImage,
+    shadowUrl: markerShadowImage,
+});
 
 interface Configuration {
     options?: MapOptions;
