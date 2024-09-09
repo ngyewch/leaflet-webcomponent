@@ -170,18 +170,18 @@ export class LeafletMapElement extends LitElement {
         const thead = DomUtil.create('thead', undefined, table);
         const trHead = DomUtil.create('tr', undefined, thead);
         const thName = DomUtil.create('th', undefined, trHead);
-        thName.innerText = 'Name';
+        thName.innerHTML = 'Name';
         const thValue = DomUtil.create('th', undefined, trHead);
-        thValue.innerText = 'Value';
+        thValue.innerHTML = 'Value';
         const tbody = DomUtil.create('tbody', undefined, table);
         if (feature.properties !== null) {
             for (let key in feature.properties) {
                 const value = feature.properties[key];
                 const tr = DomUtil.create('tr', undefined, tbody);
                 const tdName = DomUtil.create('td', undefined, tr);
-                tdName.innerText = key;
+                tdName.innerHTML = key;
                 const tdValue = DomUtil.create('td', undefined, tr);
-                tdValue.innerText = value;
+                tdValue.innerHTML = value;
             }
         }
         layer.bindTooltip(tooltip);
