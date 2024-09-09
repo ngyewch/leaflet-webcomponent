@@ -55,7 +55,18 @@
                             "id": "singapore-neighbourhoods",
                             "fitBounds": true,
                             "options": {
-                                "attribution": "Map data: &copy; <a href=\"https://insideairbnb.com/get-the-data/\">Inside Airbnb</a> contributors"
+                                "attribution": "&copy; <a href=\"https://insideairbnb.com/get-the-data/\">Inside Airbnb</a> contributors"
+                            }
+                        }
+                    }, {
+                        "name": "Singapore Historic Sites",
+                        "selected": false,
+                        "config": {
+                            "kind": "GeoJSON",
+                            "id": "singapore-historic-sites",
+                            "fitBounds": true,
+                            "options": {
+                                "attribution": "&copy; <a href=\"https://data.gov.sg/\">2024 Open Government Products, Government Technology Agency of Singapore</a>"
                             }
                         }
                     }
@@ -63,6 +74,7 @@
             }
         </script>
         <script id="singapore-neighbourhoods" type="application/geo+json" src="testdata/neighbourhoods.geojson"></script>
+        <script id="singapore-historic-sites" type="application/geo+json" src="testdata/historic-sites.geojson"></script>
     </leaflet-map>
 </body>
 </html>
