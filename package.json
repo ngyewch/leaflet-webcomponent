@@ -1,6 +1,6 @@
 {
   "name": "@ngyewch/leaflet-webcomponent",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Leaflet web component",
   "keywords": [
     "leaflet",
@@ -15,15 +15,15 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/leaflet-webcomponent.es.js",
-      "require": "./dist/leaflet-webcomponent.umd.js",
-      "script": "./dist/leaflet-webcomponent.umd.js",
-      "types": "./dist/leaflet-webcomponents.es.d.ts"
+      "import": "./dist/leaflet-webcomponent.js",
+      "require": "./dist/leaflet-webcomponent.umd.cjs",
+      "script": "./dist/leaflet-webcomponent.umd.cjs",
+      "types": "./dist/leaflet-webcomponents.d.ts"
     }
   },
-  "module": "./dist/leaflet-webcomponent.es.js",
-  "main": "./dist/leaflet-webcomponent.umd.js",
-  "types": "./dist/leaflet-webcomponents.es.d.ts",
+  "module": "./dist/leaflet-webcomponent.js",
+  "main": "./dist/leaflet-webcomponent.umd.cjs",
+  "types": "./dist/leaflet-webcomponents.d.ts",
   "scripts": {
     "build": "tsc --noEmit && vite build",
     "postbuild": "validate-package-exports --check",

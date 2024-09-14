@@ -1,21 +1,19 @@
 import {defineConfig} from 'vite';
 import dts from 'vite-plugin-dts';
 
-export default defineConfig(() => {
-    return {
-        build: {
-            minify: true,
-            sourcemap: true,
-            lib: {
-                entry: './src/index.ts',
-                name: 'leaflet-webcomponent',
-                fileName: (format) => `leaflet-webcomponent.${format}.js`,
-            },
+export default defineConfig({
+    build: {
+        minify: true,
+        sourcemap: true,
+        lib: {
+            entry: './src/index.ts',
+            name: 'leaflet-webcomponent',
+            formats: ['es', 'umd', 'cjs'],
         },
-        plugins: [
-            dts({
-                rollupTypes: true,
-            }),
-        ],
-    };
+    },
+    plugins: [
+        dts({
+            rollupTypes: true,
+        }),
+    ],
 });
