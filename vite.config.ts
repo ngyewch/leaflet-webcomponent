@@ -8,7 +8,7 @@ export default defineConfig({
         lib: {
             entry: './src/index.ts',
             name: 'leaflet-webcomponent',
-            formats: ['es', 'umd', 'cjs'],
+            formats: ['es'],
         },
     },
     plugins: [

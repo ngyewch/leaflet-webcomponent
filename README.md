@@ -15,11 +15,6 @@ Script tag:
 <script type="module" src="https://cdn.jsdelivr.net/npm/@ngyewch/leaflet-webcomponent@0.4.0/dist/leaflet-webcomponent.js"></script>
 ```
 
-Alternative:
-```
-<script defer src="https://cdn.jsdelivr.net/npm/@ngyewch/leaflet-webcomponent@0.4.0/dist/leaflet-webcomponent.umd.cjs"></script>
-```
-
 ### Markup
 
 ```
