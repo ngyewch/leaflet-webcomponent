@@ -1,0 +1,22 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./src/index.ts"],
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "excludeNotDocumented": false,
+  "out": "build/gh-pages/typedoc",
+  "validation": {
+    "notExported": true,
+    "invalidLink": true,
+    "notDocumented": true
+  },
+  "externalSymbolLinkMappings": {
+    "@types/leaflet": {
+      "Control.ScaleOptions": "https://leafletjs.com/reference.html#control-scale-option",
+      "GeoJSONOptions": "https://leafletjs.com/reference.html#geojson-option",
+      "MapOptions": "https://leafletjs.com/reference.html#map-option",
+      "TileLayerOptions": "https://leafletjs.com/reference.html#tilelayer-option",
+      "WMSOptions": "https://leafletjs.com/reference.html#tilelayer-wms-option"
+    }
+  }
+}

@@ -6,6 +6,10 @@
 
 Simple web component for displaying [Leaflet](https://leafletjs.com/) maps.
 
+[Configuration](./typedoc/interfaces/Configuration.html)
+
+[Typedoc](./typedoc/)
+
 ## Playground
 
 <div>

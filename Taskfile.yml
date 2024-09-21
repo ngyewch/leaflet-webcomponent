@@ -34,8 +34,15 @@ tasks:
       - task: site-clean
       - mkdir -p build/gh-pages
       - task: site-build-mdbook
+      - task: site-build-typedoc
 
   site-build-mdbook:
     desc: Generate mdbook
     cmds:
       - mdbook build --dest-dir $(pwd)/build/gh-pages docs/mdbook
+
+  site-build-typedoc:
+    desc: Generate typedoc
+    deps: [ install ]
+    cmds:
+      - pnpm run typedoc

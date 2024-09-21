@@ -18,6 +18,9 @@ Icon.Default.mergeOptions({
     shadowUrl: markerShadowImage,
 });
 
+/**
+ * Leaflet Map web component.
+ */
 @customElement('leaflet-map')
 export class LeafletMapElement extends LitElement {
     public static styles = unsafeCSS(leafletCss);
