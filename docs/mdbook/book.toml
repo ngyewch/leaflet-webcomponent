@@ -1,0 +1,10 @@
+[book]
+authors = ["Nick Ng"]
+language = "en"
+multilingual = false
+title = "@ngyewch/leaflet-webcomponent"
+
+[output.html]
+additional-css = ["custom.css"]
+git-repository-url = "https://github.com/ngyewch/leaflet-webcomponent"
+site-url = "/leaflet-webcomponent/"
