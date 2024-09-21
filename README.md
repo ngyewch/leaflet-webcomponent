@@ -73,3 +73,9 @@ Script tag:
         <script id="singapore-neighbourhoods" type="application/geo+json" src="testdata/neighbourhoods.geojson"></script>
     </leaflet-map>
 ```
+
+## TODO
+
+* SVGOverlay
+* ImageOverlay
+* VideoOverlay
