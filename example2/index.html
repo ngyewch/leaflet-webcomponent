@@ -1,0 +1,50 @@
+<html>
+<head>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ngyewch/leaflet-webcomponent@0.5.0/dist/leaflet-webcomponent.js"></script>
+</head>
+<body>
+<leaflet-map id="test1">
+    <script type="application/json">
+        {
+            "options": {
+                "center": [
+                    1.3521,
+                    103.8198
+                ],
+                "zoom": 3
+            },
+            "scaleOptions": {
+                "maxWidth": 200
+            },
+            "baseLayers": [
+                {
+                    "name": "OpenStreetMaps",
+                    "config": {
+                        "kind": "TileLayer",
+                        "urlTemplate": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                        "options": {
+                            "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"
+                        }
+                    }
+                }
+            ],
+            "overlayLayers": [
+                {
+                    "name": "OpenSeaMap",
+                    "selected": false,
+                    "config": {
+                        "kind": "TileLayer",
+                        "urlTemplate": "https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png",
+                        "options": {
+                            "opacity": 0.2,
+                            "attribution": "Map data: &copy; <a href=\"http://www.openseamap.org\">OpenSeaMap</a> contributors"
+                        }
+                    }
+                }
+            ]
+        }
+    </script>
+    <script id="singapore-neighbourhoods" type="application/geo+json" src="testdata/neighbourhoods.geojson"></script>
+</leaflet-map>
+</body>
+</html>
