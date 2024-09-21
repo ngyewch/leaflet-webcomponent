@@ -18,7 +18,7 @@ Script tag:
 ### Markup
 
 ```
-    <leaflet-map id="test1">
+    <leaflet-map>
         <script type="application/json">
             {
                 "options": {
