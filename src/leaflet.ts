@@ -1,6 +1,6 @@
 import {LitElement, html, unsafeCSS} from 'lit';
 import {customElement, query, queryAssignedElements} from 'lit/decorators.js';
-import {Control, DomUtil, GeoJSON, Icon, Layer, Map, TileLayer} from 'leaflet';
+import {Control, DomUtil, GeoJSON, Icon, ImageOverlay, Layer, Map, TileLayer, VideoOverlay} from 'leaflet';
 import {Feature, GeoJsonObject} from 'geojson';
 import {Configuration, LayerConfiguration} from './config.js';
 // @ts-ignore
@@ -104,7 +104,7 @@ export class LeafletMapElement extends LitElement {
                 return new TileLayer(config.urlTemplate, config.options);
             case 'TileLayer.WMS':
                 return new TileLayer.WMS(config.baseUrl, config.options);
-            case 'GeoJSON':
+            case 'GeoJSON': {
                 if (!config.options) {
                     config.options = {};
                 }
@@ -130,13 +130,36 @@ export class LeafletMapElement extends LitElement {
                         console.error('leaflet-map', this.id, 'error loading GeoJSON', reason, config.id);
                     });
                 return layer;
+            }
+            case 'ImageOverlay': {
+                const layer = new ImageOverlay(config.imageUrl, config.bounds, config.options);
+                if (config.fitBounds) {
+                    layer.on('add', () => {
+                        if (this.map && config.fitBounds) {
+                            this.map.fitBounds(layer.getBounds());
+                        }
+                    });
+                }
+                return layer;
+            }
+            case 'VideoOverlay': {
+                const layer = new VideoOverlay(config.videoUrl, config.bounds, config.options);
+                if (config.fitBounds) {
+                    layer.on('add', () => {
+                        if (this.map && config.fitBounds) {
+                            this.map.fitBounds(layer.getBounds());
+                        }
+                    });
+                }
+                return layer;
+            }
             default:
                 console.error('leaflet-map', this.id, 'unknown layer kind', config);
                 return undefined;
         }
     }
 
-    private onEachFeature(feature: Feature, layer: Layer) {
+    private onEachFeature(feature: Feature, layer: Layer): void {
         const tooltip = DomUtil.create('div');
         const table = DomUtil.create('table', undefined, tooltip);
         const thead = DomUtil.create('thead', undefined, table);

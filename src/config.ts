@@ -1,4 +1,13 @@
-import {Control, GeoJSONOptions, MapOptions, TileLayerOptions, WMSOptions} from 'leaflet';
+import {
+    Control,
+    type GeoJSONOptions,
+    type ImageOverlayOptions,
+    LatLngBounds,
+    type MapOptions,
+    type TileLayerOptions,
+    type VideoOverlayOptions,
+    type WMSOptions,
+} from 'leaflet';
 
 /**
  * Leaflet Map web component configuration.
@@ -29,7 +38,13 @@ export interface LayersControlEntry {
 /**
  * Layer configuration.
  */
-export type LayerConfiguration = TileLayerConfiguration | TileLayerWMSConfiguration | GeoJSONConfiguration;
+export type LayerConfiguration =
+    GeoJSONConfiguration
+    | ImageOverlayConfiguration
+    | TileLayerConfiguration
+    | TileLayerWMSConfiguration
+    | VideoOverlayConfiguration
+    ;
 
 /**
  * Tile layer configuration.
@@ -67,4 +82,36 @@ export interface GeoJSONConfiguration {
     fitBounds?: boolean,
     /** Options. */
     options?: GeoJSONOptions;
+}
+
+/**
+ * ImageOverlay configuration.
+ */
+export interface ImageOverlayConfiguration {
+    /** Kind. */
+    kind: 'ImageOverlay';
+    /** Image URL. */
+    imageUrl: string;
+    /** Bounds. */
+    bounds: LatLngBounds,
+    /** Fit bounds on display/select. */
+    fitBounds?: boolean,
+    /** Options. */
+    options?: ImageOverlayOptions;
+}
+
+/**
+ * VideoOverlay configuration.
+ */
+export interface VideoOverlayConfiguration {
+    /** Kind. */
+    kind: 'VideoOverlay';
+    /** Image URL(s). */
+    videoUrl: string | string[];
+    /** Bounds. */
+    bounds: LatLngBounds,
+    /** Fit bounds on display/select. */
+    fitBounds?: boolean,
+    /** Options. */
+    options?: VideoOverlayOptions;
 }

@@ -52,7 +52,7 @@ Script tag:
                             "urlTemplate": "https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png",
                             "options": {
                                 "opacity": 0.2,
-                                "attribution": "Map data: &copy; <a href=\"http://www.openseamap.org\">OpenSeaMap</a> contributors"
+                                "attribution": "&copy; <a href=\"http://www.openseamap.org\">OpenSeaMap</a> contributors"
                             }
                         }
                     }, {
@@ -63,7 +63,43 @@ Script tag:
                             "id": "singapore-neighbourhoods",
                             "fitBounds": true,
                             "options": {
-                                "attribution": "Map data: &copy; <a href=\"https://insideairbnb.com/get-the-data/\">Inside Airbnb</a> contributors"
+                                "attribution": "&copy; <a href=\"https://insideairbnb.com/get-the-data/\">Inside Airbnb</a> contributors"
+                            }
+                        }
+                    }, {
+                        "name": "Newark, N.J. in 1922",
+                        "selected": false,
+                        "config": {
+                            "kind": "ImageOverlay",
+                            "imageUrl": "https://maps.lib.utexas.edu/maps/historical/newark_nj_1922.jpg",
+                            "bounds": [[40.799311, -74.118464], [40.68202047785919, -74.33]],
+                            "fitBounds": true,
+                            "options": {
+                                "attribution": "Image of Newark, N.J. in 1922. Source: The University of Texas at Austin, UT Libraries Map Collection.",
+                                "opacity": 0.8,
+                                "errorOverlayUrl": "https://cdn-icons-png.flaticon.com/512/110/110686.png",
+                                "interactive": true
+                            }
+                        }
+                    }, {
+                        "name": "Hurricane Patricia",
+                        "selected": false,
+                        "config": {
+                            "kind": "VideoOverlay",
+                            "videoUrl": [
+                                "https://www.mapbox.com/bites/00188/patricia_nasa.webm",
+                                "https://www.mapbox.com/bites/00188/patricia_nasa.mp4"
+                            ],
+                            "bounds": [[32, -130], [13, -100]],
+                            "fitBounds": true,
+                            "options": {
+                                "attribution": "NASA GSFC GOES Project",
+                                "opacity": 0.8,
+                                "errorOverlayUrl": "https://cdn-icons-png.flaticon.com/512/110/110686.png",
+                                "interactive": true,
+                                "autoplay": true,
+                                "muted": true,
+                                "playsInline": true
                             }
                         }
                     }
@@ -73,9 +109,3 @@ Script tag:
         <script id="singapore-neighbourhoods" type="application/geo+json" src="testdata/neighbourhoods.geojson"></script>
     </leaflet-map>
 ```
-
-## TODO
-
-* SVGOverlay
-* ImageOverlay
-* VideoOverlay
