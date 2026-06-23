@@ -53,3 +53,9 @@ tasks:
     deps: [ install ]
     cmds:
       - pnpm run typedoc
+
+  site-serve:
+    desc: Serve site
+    deps: [ site-build ]
+    cmds:
+      - caddy file-server --listen localhost:8080 --root build/gh-pages
