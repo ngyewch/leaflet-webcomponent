@@ -1,5 +1,7 @@
 {
   "files": {
-    "index.html": {}
+    "index.html": {},
+    "neighbourhoods.geojson": {},
+    "CyclingPathNetworkGEOJSON.geojson": {}
   }
 }

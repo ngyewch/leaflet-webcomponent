@@ -40,10 +40,36 @@
                             "attribution": "&copy; <a href=\"http://www.openseamap.org\">OpenSeaMap</a> contributors"
                         }
                     }
+                },
+                {
+                    "name": "Singapore Neighbourhoods",
+                    "selected": false,
+                    "config": {
+                        "kind": "GeoJSON",
+                        "id": "singapore-neighbourhoods",
+                        "fitBounds": true,
+                        "options": {
+                            "attribution": "&copy; <a href=\"https://insideairbnb.com/get-the-data/\">Inside Airbnb</a> contributors"
+                        }
+                    }
+                },
+                {
+                    "name": "Cycling Path Network",
+                    "selected": false,
+                    "config": {
+                        "kind": "GeoJSON",
+                        "id": "cycling-path-network",
+                        "fitBounds": true,
+                        "options": {
+                            "attribution": "<a href=\"https://data.gov.sg/open-data-licence\">data.gov.sg</a>"
+                        }
+                    }
                 }
             ]
         }
     </script>
+    <script id="singapore-neighbourhoods" type="application/geo+json" src="neighbourhoods.geojson"></script>
+    <script id="cycling-path-network" type="application/geo+json" src="CyclingPathNetworkGEOJSON.geojson"></script>
 </leaflet-map>
 </body>
 </html>
