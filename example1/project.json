@@ -2,6 +2,7 @@
   "files": {
     "index.html": {},
     "leaflet.json": {},
-    "neighbourhoods.geojson": {}
+    "neighbourhoods.geojson": {},
+    "CyclingPathNetworkGEOJSON.geojson": {}
   }
 }

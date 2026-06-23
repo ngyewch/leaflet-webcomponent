@@ -45,6 +45,17 @@
         }
       }
     }, {
+      "name": "Cycling Path Network",
+      "selected": false,
+      "config": {
+        "kind": "GeoJSON",
+        "id": "cycling-path-network",
+        "fitBounds": true,
+        "options": {
+          "attribution": "<a href=\"https://data.gov.sg/open-data-licence\">data.gov.sg</a>"
+        }
+      }
+    }, {
       "name": "Newark, N.J. in 1922",
       "selected": false,
       "config": {
