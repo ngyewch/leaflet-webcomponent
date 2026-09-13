@@ -1,6 +1,7 @@
 [![npm](https://img.shields.io/npm/v/@ngyewch/leaflet-webcomponent)](https://www.npmjs.com/package/@ngyewch/leaflet-webcomponent)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ngyewch/leaflet-webcomponent/CI.yml)
 ![GitHub last commit](https://img.shields.io/github/last-commit/ngyewch/leaflet-webcomponent)
+[![](https://data.jsdelivr.com/v1/package/npm/@ngyewch/leaflet-webcomponent/badge)](https://www.jsdelivr.com/package/npm/@ngyewch/leaflet-webcomponent)
 
 # leaflet-webcomponent
 
